@@ -1,61 +1,26 @@
 package domain;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.HashSet;
 import java.util.Set;
+import java.util.function.Predicate;
 
-public class TestManagementSystem {
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+public class TestManagementSystem implements Predicate<TestManagementSystem> {
     private int id;
-    private Set<String> author = new HashSet<>();
+    private Author author;
     private boolean open;
     private boolean closed;
-    private Set<String> label = new HashSet<>();
-    private Set<String> assignee = new HashSet<>();
+    private Label label;
+    private Assignee assignee;
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public Set<String> getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(Set<String> author) {
-        this.author = author;
-    }
-
-    public boolean isOpen() {
-        return open;
-    }
-
-    public void setOpen(boolean open) {
-        this.open = open;
-    }
-
-    public boolean isClosed() {
-        return closed;
-    }
-
-    public void setClosed(boolean closed) {
-        this.closed = closed;
-    }
-
-    public Set<String> getLabel() {
-        return label;
-    }
-
-    public void setLabel(Set<String> label) {
-        this.label = label;
-    }
-
-    public Set<String> getAssignee() {
-        return assignee;
-    }
-
-    public void setAssignee(Set<String> assignee) {
-        this.assignee = assignee;
+    @Override
+    public boolean test(TestManagementSystem testManagementSystem) {
+        return false;
     }
 }
