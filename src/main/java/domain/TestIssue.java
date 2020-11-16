@@ -11,7 +11,7 @@ import java.util.function.Predicate;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class TestManagementSystem implements Predicate<TestManagementSystem> {
+public class TestIssue {
     private int id;
     private Author author;
     private boolean open;
@@ -19,8 +19,4 @@ public class TestManagementSystem implements Predicate<TestManagementSystem> {
     private Label label;
     private Assignee assignee;
 
-    @Override
-    public boolean test(TestManagementSystem testManagementSystem) {
-        return false;
-    }
 }
